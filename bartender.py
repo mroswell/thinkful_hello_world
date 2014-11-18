@@ -39,5 +39,18 @@ def make_drink():
       print random.choice(ingredients[pref])
   
 if __name__ == '__main__':
+  agree = True
   get_preferences()
   make_drink()
+  while agree:
+    agree = raw_input("Would you like another drink?")
+    if agree == "yes" or agree == "y" or agree == "Yes":
+      agree = True
+    else:
+      agree = False
+    if agree:
+      get_preferences()
+      make_drink()
+    else:
+      print "Thanks, mate, for drinkin' at the Hearty Ale"
+  
