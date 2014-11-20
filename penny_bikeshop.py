@@ -13,7 +13,7 @@ penny_shop = Bikeshop("Penny's Bikes", [schwinn, bikee, explorer, scooter, folde
 joanne = Customer('Joanne', 200)
 anne = Customer('Anne', 500)
 jane = Customer('Jane', 1690)
-customers = [joanne, anne, jane]
+customers = [joanne, jane, anne]
 for customer in customers:
   print '---------------'
   print customer.name
@@ -21,32 +21,30 @@ for customer in customers:
   for bike in penny_shop.inventory:
     if customer.budget >= bike.production_cost * 1.2:
       print "-", bike.name
-      print "-----------"
-      print "Penny's Inventory"
-      print "-----------"
+  print "-----------"
+  print "Penny's Inventory"
+  print "-----------"
 
-      for bike in penny_shop.inventory:
-        print "-", bike.name
+  for bike in penny_shop.inventory:
+    print "-", bike.name
 
-        print "psi", penny_shop.inventory
-        for bike in penny_shop.inventory:
-          if customer.budget >= bike.production_cost * 1.2:
-            #    customer.owned = penny_shop.inventory.pop()
-            customer.owned = bike
-            pass
-          print "owned bike: ", customer.owned.name, customer.owned.production_cost
-          #   customer.buy_and_own_bike(penny_shop.inventory.pop) 
-          print "-----------"
-          print "Penny's Inventory"
-          print "-----------"
-          for bike in penny_shop.inventory:
-            print "-", bike.name
+  print "psi", penny_shop.inventory
+  for bike in penny_shop.inventory:
+    if customer.budget >= bike.production_cost * 1.2:
+      customer.owned = bike
+      pass
+  print "owned bike: ", customer.owned.name, customer.owned.production_cost
+  print "-----------"
+  print "Penny's Inventory"
+  print "-----------"
+  for bike in penny_shop.inventory:
+     print "-", bike.name
 
-            penny_shop.sell_bike(customer.owned, 0.2)
+  penny_shop.sell_bike(customer.owned, 0.2)
 
-            print "-----------"
-            print "Penny's Inventory"
-            print "-----------"
-            for bike in penny_shop.inventory:
-              print "-", bike.name  
+print "-----------"
+print "Penny's Inventory"
+print "-----------"
+for bike in penny_shop.inventory:
+  print "-", bike.name
 
