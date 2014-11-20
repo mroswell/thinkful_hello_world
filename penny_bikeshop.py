@@ -30,7 +30,7 @@ for customer in customers:
 
   print "psi", penny_shop.inventory
   for bike in penny_shop.inventory:
-    if customer.budget >= bike.production_cost * 1.2:
+    if customer.budget >= bike.customer_cost:
       customer.owned = bike
       pass
   print "owned bike: ", customer.owned.name, customer.owned.production_cost
@@ -40,7 +40,7 @@ for customer in customers:
   for bike in penny_shop.inventory:
      print "-", bike.name
 
-  penny_shop.sell_bike(customer.owned, 0.2)
+  penny_shop.sell_bike(customer.owned)
 
 print "-----------"
 print "Penny's Inventory"
