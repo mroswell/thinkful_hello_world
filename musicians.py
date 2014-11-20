@@ -1,4 +1,3 @@
-
 class Musician(object):
     def __init__(self, sounds):
         self.sounds = sounds
