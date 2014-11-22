@@ -10,12 +10,13 @@ class Bikeshop(object):
     self.inventory = inventory
     for bike in inventory:
       bike.customer_cost  = bike.production_cost * 1.2
+      bike.profit = bike.customer_cost -  bike.production_cost
 
   def sell_bike(self,bicycle):
     self.inventory.remove(bicycle)
 
-  def determine_profit():
-    pass
+#  def determine_profit(self,bicycle):
+#    print self.inventory[bicycle].customer_cost - biproduction_cost
 
 class Customer(object):
   def __init__(self, name, budget):
