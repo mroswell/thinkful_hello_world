@@ -1,4 +1,6 @@
 class Wheel(object):
+  """Represents a bike wheel"""
+
   def __init__(self, name, weight, production_cost):
     self.name = name
     self.weight = weight
@@ -6,19 +8,20 @@ class Wheel(object):
 
 
 class Frame(object):
+  """Represents a bike frame"""
   def __init__(self, weight, production_cost, type):
     self.weight = weight
     self.production_cost = production_cost
     self.type = type
 
 class Bicycle(object):
-  def __init__(self, name, production_cost, wheels, frame):
+  def __init__(self, name, production_cost, wheel_choice, frame):
     self.name = name
     self.weight = 0
-    for wheel in wheels:
-      self.weight += wheel.weight
-      print self.weight
-    self.weight += frame.weight
+#    for wheel in wheels:
+#      self.weight += wheel.weight
+#      print self.weight
+    self.weight = wheel_choice.weight * 2 + frame.weight
     print self.weight
     self.production_cost = production_cost
 

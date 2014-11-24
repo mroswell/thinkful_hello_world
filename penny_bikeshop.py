@@ -23,12 +23,12 @@ steel = Frame(11, 70, 'Steel')
 # folder = Bicycle('Folder',13, 1600, [little_wheel, little_wheel], aluminum)
 # friday = Bicycle('Bike Friday', 19,1400, [little_wheel, little_wheel], carbon)
 
-schwinn = Bicycle('Schwinn', 160, [little_wheel, little_wheel], aluminum)
-bikee = Bicycle('BikeE',1000, [medium_wheel, medium_wheel], aluminum)
-explorer = Bicycle('Explorer',750, [large_wheel,large_wheel], carbon)
-scooter = Bicycle('Scooter', 300, [medium_wheel, medium_wheel], steel)
-folder = Bicycle('Folder', 1600, [little_wheel, little_wheel], aluminum)
-friday = Bicycle('Bike Friday',1400, [little_wheel, little_wheel], carbon)
+schwinn = Bicycle('Schwinn', 160, little_wheel, aluminum)
+bikee = Bicycle('BikeE',1000, medium_wheel, aluminum)
+explorer = Bicycle('Explorer',750, large_wheel, carbon)
+scooter = Bicycle('Scooter', 300, medium_wheel, steel)
+folder = Bicycle('Folder', 1600, little_wheel, aluminum)
+friday = Bicycle('Bike Friday',1400, little_wheel, carbon)
 
 print schwinn.name
 print "Weighs", schwinn.weight, "lbs"
