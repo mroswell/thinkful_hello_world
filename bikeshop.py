@@ -15,15 +15,14 @@ class Frame(object):
     self.type = type
 
 class Bicycle(object):
-  def __init__(self, name, production_cost, wheel_choice, frame):
+  def __init__(self, name, wheel_choice, frame):
     self.name = name
     self.weight = 0
 #    for wheel in wheels:
 #      self.weight += wheel.weight
 #      print self.weight
     self.weight = wheel_choice.weight * 2 + frame.weight
-    print self.weight
-    self.production_cost = production_cost
+    self.production_cost = wheel_choice.production_cost * 2 + frame.production_cost
 
 class Bikeshop(object):
   def __init__(self, name, inventory):
