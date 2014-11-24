@@ -1,4 +1,4 @@
-from bikeshop import Bicycle, Bikeshop, Customer
+from bikeshop import Bicycle, Bikeshop, Customer, Wheel, Frame
 profit = 0
 
 def print_inventory():
@@ -8,12 +8,27 @@ def print_inventory():
   for bike in penny_shop.inventory:
     print "-", bike.name
 
-schwinn = Bicycle('Schwinn', 12, 160)
-bikee = Bicycle('BikeE',24,1000)
-explorer = Bicycle('Explorer',20,750)
-scooter = Bicycle('Scooter',5, 300)
-folder = Bicycle('Folder',13, 1600)
-friday = Bicycle('Bike Friday', 19,1400)
+little_wheel = Wheel('Little Wheel', 2, 20)
+medium_wheel = Wheel('Medium Wheel', 3, 25)
+large_wheel = Wheel('Large Wheel', 5, 30)
+
+aluminum = Frame(8, 75, 'Aluminum')
+carbon = Frame(7, 100, 'Carbon')
+steel = Frame(11, 70, 'Steel')
+
+# schwinn = Bicycle('Schwinn', 12, 160, [little_wheel, little_wheel], aluminum)
+# bikee = Bicycle('BikeE',24,1000, [medium_wheel, medium_wheel], aluminum)
+# explorer = Bicycle('Explorer',20,750, [large_wheel,large_wheel], carbon)
+# scooter = Bicycle('Scooter',5, 300, [medium_wheel, medium_wheel], steel)
+# folder = Bicycle('Folder',13, 1600, [little_wheel, little_wheel], aluminum)
+# friday = Bicycle('Bike Friday', 19,1400, [little_wheel, little_wheel], carbon)
+
+schwinn = Bicycle('Schwinn', 160, [little_wheel, little_wheel], aluminum)
+bikee = Bicycle('BikeE',1000, [medium_wheel, medium_wheel], aluminum)
+explorer = Bicycle('Explorer',750, [large_wheel,large_wheel], carbon)
+scooter = Bicycle('Scooter', 300, [medium_wheel, medium_wheel], steel)
+folder = Bicycle('Folder', 1600, [little_wheel, little_wheel], aluminum)
+friday = Bicycle('Bike Friday',1400, [little_wheel, little_wheel], carbon)
 
 print schwinn.name
 print "Weighs", schwinn.weight, "lbs"

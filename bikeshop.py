@@ -1,7 +1,25 @@
-class Bicycle(object):
+class Wheel(object):
   def __init__(self, name, weight, production_cost):
     self.name = name
     self.weight = weight
+    self.production_cost = production_cost
+
+
+class Frame(object):
+  def __init__(self, weight, production_cost, type):
+    self.weight = weight
+    self.production_cost = production_cost
+    self.type = type
+
+class Bicycle(object):
+  def __init__(self, name, production_cost, wheels, frame):
+    self.name = name
+    self.weight = 0
+    for wheel in wheels:
+      self.weight += wheel.weight
+      print self.weight
+    self.weight += frame.weight
+    print self.weight
     self.production_cost = production_cost
 
 class Bikeshop(object):
